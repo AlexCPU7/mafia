@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="RU">
 <head>
     <meta charset="UTF-8">
     <title>Мафия</title>
@@ -22,7 +22,7 @@
     $doc = (int)$_POST['doc'];
     $detective = (int)$_POST['detective'];
 
-    $mas =[];
+    $mas = array();
     $num = 0;
     for($i = 0; $i < $human; $i++){
         $mas[$num] = "Мирный житель";
@@ -44,10 +44,12 @@
         $mas[$num] = "Детектив";
         $num++;
     }
-    shuffle($mas);
-        foreach ($mas as $m){
-
-            echo "<button>     ".$m." </button></p>"."<br>";
+    //shuffle($mas);
+    $player = 1;
+    foreach ($mas as $m){
+        $m = '"' . $m . '"';
+        echo "<button onclick='alert(".$m.")'> Игрок ".$player." </button><br>";
+        $player++;
     };
 
     ?>
